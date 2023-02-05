@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Left, Right } from "react-bootstrap/lib/Media";
 import { Link } from "react-router-dom";
- 
+import SearchBar from "./SearchBar";
 const Record = (props) => (
  <tr>
     
@@ -15,7 +15,7 @@ const Record = (props) => (
          props.deleteRecord(props.record._id);
        }}
      >
-       למחוק
+       מחיקה
      </button>
    </td>
  </tr>
@@ -23,7 +23,8 @@ const Record = (props) => (
  
 export default function RecordList() {
  const [records, setRecords] = useState([]);
- 
+ const [searchRecords, setSearchRecords] = useState([]);
+
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
@@ -37,6 +38,7 @@ export default function RecordList() {
  
      const records = await response.json();
      setRecords(records);
+     setSearchRecords(records);
    }
  
    getRecords();
@@ -56,7 +58,7 @@ export default function RecordList() {
  
  // This method will map out the records on the table
  function recordList() {
-   return records.map((record) => {
+   return searchRecords.map((record) => {
      return (
        <Record
          record={record}
@@ -70,6 +72,10 @@ export default function RecordList() {
  // This following section will display the table with the records of individuals.
  return (
    <div style={{ direction: "rtl" }}>
+   <SearchBar
+      posts = {records}
+      setSearchResults = {setSearchRecords}
+    />
      <h3 style={{textAlign:"right",margin:"30px" }}>רשימת חיילים בסדיר</h3>
      <table className="table table-striped table-primary" style={{ marginTop: 20,textAlign:"right" }}>
        <thead>

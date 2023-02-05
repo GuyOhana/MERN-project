@@ -42,7 +42,7 @@ export default function Create() {
  // This following section will display the form that takes the input from the user.
  return (
    <div style={{direction:"rtl", textAlign: "right"}}>
-     <h3 style={{margin:10}}>הכנס חייל חדש</h3>
+     <h3 style={{margin:"30px"}}>הכנס חייל חדש</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
          <label htmlFor="name">שם</label>

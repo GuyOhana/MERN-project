@@ -9,13 +9,13 @@ const Record = (props) => (
    <td>{props.record.position}</td>
    <td>{props.record.level}</td>
    <td>
-     <Link className="btn btn-link" to={`/edit/${props.record._id}`}>עריכה</Link> |
-     <button className="btn btn-link"
+     <Link style= {{color: "purple", textDecoration:"underline"}} to={`/edit/${props.record._id}`}>לשנות</Link> |
+     <button style= {{color: "purple", background: "none", border:"none",textDecoration:"underline"}}
        onClick={() => {
          props.deleteRecord(props.record._id);
        }}
      >
-       מחיקה
+       למחוק
      </button>
    </td>
  </tr>
@@ -70,8 +70,8 @@ export default function RecordList() {
  // This following section will display the table with the records of individuals.
  return (
    <div style={{ direction: "rtl" }}>
-     <h3 style={{textAlign:"right",margin:"15px" }}>רשימת חיילים בסדיר</h3>
-     <table className="table table-striped" style={{ marginTop: 20,textAlign:"right" }}>
+     <h3 style={{textAlign:"right",margin:"30px" }}>רשימת חיילים בסדיר</h3>
+     <table className="table table-striped table-primary" style={{ marginTop: 20,textAlign:"right" }}>
        <thead>
          <tr>
            <th>שם</th>

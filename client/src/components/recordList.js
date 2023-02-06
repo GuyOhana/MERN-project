@@ -58,6 +58,7 @@ export default function RecordList() {
  
  // This method will map out the records on the table
  function recordList() {
+  if(!searchRecords.length) return <h2>אין התאמות</h2>
    return searchRecords.map((record) => {
      return (
        <Record

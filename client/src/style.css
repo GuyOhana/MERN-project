@@ -12,7 +12,6 @@ nav {
 .nav-link1 {
   color: white;
   text-decoration: none;
-  font-size: 20px;
   padding: 20px;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -47,3 +46,66 @@ nav {
   }
   
   
+
+.search {
+  width: 0%;
+  border: 1px solid #000;
+  border-radius: 2em;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  position: absolute;
+  left: 0;
+  top: 85px;
+  font-size: 16px;
+}
+
+.search:focus-within {
+  box-shadow: 2px 2px 2px #000;
+}
+
+.search__button,
+.search__input {
+  background-color: #fff;
+  border: none;
+  outline: none;
+  font-size: 20px;
+
+}
+
+.search__input {
+  padding: 1em;
+  width: 85%;
+}
+
+.search__button {
+  width: 15%;
+  font-size: 1.5rem;
+  padding-right: 0.5em;
+  color: gray;
+  display: grid;
+  place-content: center;
+}
+
+@media (min-width: 400px) {
+  .search {
+    font-size: 1.5rem;
+  }
+
+  .search__button {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 400px) {
+  .search {
+    width: 55%;
+    font-size: 2rem;
+    height: 60px;
+  }
+
+  .search__button {
+    padding-right: -0.5em;
+    font-size: 3rem;
+  }
+}

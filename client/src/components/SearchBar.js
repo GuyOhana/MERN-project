@@ -1,5 +1,6 @@
 import React from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 export default function SearchBar(props){
         const handleSubmit = (e) => e.preventDefault()
     
@@ -15,10 +16,14 @@ export default function SearchBar(props){
                 <form className="search" onSubmit={handleSubmit}>
                     <input
                         className="search__input"
+                        placeholder="חפש..."
                         type="text"
                         id="search"
                         onChange={handleSearchChange}
                     />
+                <button className="search__button">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </button>
                 </form>
             </header>
         )

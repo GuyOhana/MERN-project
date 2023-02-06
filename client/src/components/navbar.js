@@ -27,7 +27,7 @@ export default function Navbar() {
          <ul className="navbar-nav ml-auto">
            <li className="nav-item">
              <NavLink className="nav-link1" to="/create">
-                 תיצור חייל
+                 הכנס חייל
              </NavLink>
            </li>
            <li className="nav-item">

@@ -65,6 +65,16 @@ export default function Create() {
          />
        </div>
        <div className="form-group">
+         <label htmlFor="item">פריט</label>
+         <input
+           type="text"
+           className="form-control"
+           id="item"
+           value={form.item}
+           onChange={(e) => updateForm({ item: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
          <div className="form-check form-check-inline">
            <input
              className="form-check-input"

@@ -7,6 +7,8 @@ const Record = (props) => (
     
    <td>{props.record.name}</td>
    <td>{props.record.position}</td>
+   {console.log(props.record.item)}
+   <td>{props.record.item}</td>
    <td>{props.record.level}</td>
    <td>
      <Link style= {{color: "purple", textDecoration:"underline"}} to={`/edit/${props.record._id}`}>לשנות</Link> |
@@ -83,6 +85,7 @@ export default function RecordList() {
          <tr>
            <th>שם</th>
            <th>תפקיד</th>
+           <th>שם פריט</th>
            <th>דרגה</th>
            <th style={{textAlign:"right",paddingRight:63}}>פעולה</th>
          </tr>

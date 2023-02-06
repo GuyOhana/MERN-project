@@ -7,8 +7,9 @@ const Record = (props) => (
     
    <td>{props.record.name}</td>
    <td>{props.record.position}</td>
-   {console.log(props.record.item)}
    <td>{props.record.item}</td>
+   {console.log(props.record.numItem)}
+   <td>{props.record.numItem}</td>
    <td>{props.record.level}</td>
    <td>
      <Link style= {{color: "purple", textDecoration:"underline"}} to={`/edit/${props.record._id}`}>לשנות</Link> |
@@ -20,6 +21,8 @@ const Record = (props) => (
        מחיקה
      </button>
    </td>
+   <td>{props.record.personalNum}</td>
+   
  </tr>
 );
  
@@ -31,13 +34,12 @@ export default function RecordList() {
  useEffect(() => {
    async function getRecords() {
      const response = await fetch(`http://localhost:5000/record/`);
- 
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
        window.alert(message);
        return;
      }
- 
+     
      const records = await response.json();
      setRecords(records);
      setSearchRecords(records);
@@ -80,14 +82,16 @@ export default function RecordList() {
       setSearchResults = {setSearchRecords}
     />
      <h3 style={{textAlign:"right",margin:"30px" }}>מאגר נתונים</h3>
-     <table className="table table-striped table-primary" style={{ marginTop: 20,textAlign:"right" }}>
+     <table className="table table-striped table-primary" style={{ textAlign:"right" }}>
        <thead>
          <tr>
            <th>שם</th>
            <th>תפקיד</th>
            <th>שם פריט</th>
+           <th>כמות</th>
            <th>דרגה</th>
-           <th style={{textAlign:"right",paddingRight:63}}>פעולה</th>
+           <th style={{textAlign:"right"}}>פעולה</th>
+           <th>מספר אישי</th>
          </tr>
        </thead>
        <tbody>{recordList()}</tbody>

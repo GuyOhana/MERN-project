@@ -6,6 +6,9 @@ export default function Create() {
    name: "",
    position: "",
    level: "",
+   item:"",
+   numItem: "",
+   personalNum: ""
  });
  const navigate = useNavigate();
  
@@ -34,8 +37,8 @@ export default function Create() {
      window.alert(error);
      return;
    });
- 
-   setForm({ name: "", position: "", level: "" });
+   
+   setForm({ name: "", position: "", level: "",item:"",numItem:""});
    navigate("/");
  }
  
@@ -72,6 +75,27 @@ export default function Create() {
            id="item"
            value={form.item}
            onChange={(e) => updateForm({ item: e.target.value })}
+         />
+       </div>
+       
+       <div className="form-group">
+         <label htmlFor="numItem">כמות</label>
+         <input
+           type="text"
+           className="form-control"
+           id="numItem"
+           value={form.numItem}
+           onChange={(e) => updateForm({ numItem: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="personalNum">מספר אישי</label>
+         <input
+           type="text"
+           className="form-control"
+           id="personalNum"
+           value={form.personalNum}
+           onChange={(e) => updateForm({ personalNum: e.target.value })}
          />
        </div>
        <div className="form-group">

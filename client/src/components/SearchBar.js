@@ -7,7 +7,7 @@ export default function SearchBar(props){
         const handleSearchChange = (e) => {
             if (!e.target.value) return props.setSearchResults(props.posts)
     
-            const resultsArray = props.posts.filter(post => post.name.includes(e.target.value) || post.position.includes(e.target.value) || post.level.includes(e.target.value))
+            const resultsArray = props.posts.filter(post => post.numItem.includes(e.target.value)||post.item.includes(e.target.value)|| post.personalNum.includes(e.target.value)|| post.name.includes(e.target.value) || post.position.includes(e.target.value) || post.level.includes(e.target.value))
             props.setSearchResults(resultsArray)
         }
     

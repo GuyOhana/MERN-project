@@ -50,7 +50,9 @@ export default function Edit() {
      name: form.name,
      position: form.position,
      level: form.level,
-     item: form.item
+     item: form.item,
+     numItem: form.numItem,
+     personalNum: form.personalNum
    };
  
    // This will send a post request to update the data in the database.
@@ -98,6 +100,26 @@ export default function Edit() {
            id="item"
            value={form.item}
            onChange={(e) => updateForm({ item: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="numItem">כמות: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="numItem"
+           value={form.numItem}
+           onChange={(e) => updateForm({ numItem: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="personalNum">מספר אישי: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="personalNum"
+           value={form.personalNum}
+           onChange={(e) => updateForm({ personalNum: e.target.value })}
          />
        </div>
        <div className="form-group">

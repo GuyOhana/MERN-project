@@ -11,6 +11,7 @@ export default function Navbar() {
  return (
    <div>
      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <h1 className="title">מערכת לניהול משאבים</h1>
        <button
          className="navbar-toggler"
          type="button"
@@ -27,7 +28,7 @@ export default function Navbar() {
          <ul className="navbar-nav ml-auto">
            <li className="nav-item">
              <NavLink className="nav-link1" to="/create">
-                 הכנס חייל
+                 השאלה חדשה
              </NavLink>
            </li>
            <li className="nav-item">

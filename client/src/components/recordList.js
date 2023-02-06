@@ -77,7 +77,7 @@ export default function RecordList() {
       posts = {records}
       setSearchResults = {setSearchRecords}
     />
-     <h3 style={{textAlign:"right",margin:"30px" }}>רשימת חיילים בסדיר</h3>
+     <h3 style={{textAlign:"right",margin:"30px" }}>מאגר נתונים</h3>
      <table className="table table-striped table-primary" style={{ marginTop: 20,textAlign:"right" }}>
        <thead>
          <tr>

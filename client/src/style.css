@@ -9,15 +9,26 @@ nav {
   background-position-x:center ;
 }
 
+.title{
+  color: white;
+  position: absolute;
+  top: 3px;
+  right: 590px;
+  font-size: 36px;
+}
+
+
 .nav-link1 {
   color: white;
   text-decoration: none;
-  padding: 20px;
+  padding: 15px;
   transition: all 0.3s ease;
   text-decoration: none;
   margin-right: 20px;
   font-size: 16px;
-
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .table {
   background-color: white;
@@ -56,7 +67,7 @@ nav {
   flex-flow: row nowrap;
   position: absolute;
   left: 0;
-  top: 85px;
+  top: 80px;
   font-size: 16px;
 }
 

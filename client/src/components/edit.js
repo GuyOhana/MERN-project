@@ -67,7 +67,7 @@ export default function Edit() {
  // This following section will display the form that takes input from the user to update the data.
  return (
    <div style={{direction:"rtl",textAlign:"right"}}>
-     <h3 style={{margin:"30px"}}>עדכון פרטי חייל</h3>
+     <h3 style={{margin:"30px"}}>עדכון השאלה</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
          <label htmlFor="name">שם: </label>

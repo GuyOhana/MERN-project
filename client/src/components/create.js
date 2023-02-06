@@ -12,18 +12,18 @@ export default function Create() {
  });
  const navigate = useNavigate();
  
- // These methods will update the state properties.
+ // update the state properties.
  function updateForm(value) {
    return setForm((prev) => {
      return { ...prev, ...value };
    });
  }
  
- // This function will handle the submission.
+ //  handle the submission.
  async function onSubmit(e) {
    e.preventDefault();
  
-   // When a post request is sent to the create url, we'll add a new record to the database.
+   // When a post request is sent to the create url, add a new record to the database.
    const newPerson = { ...form };
  
    await fetch("http://localhost:5000/record/add", {
@@ -42,7 +42,7 @@ export default function Create() {
    navigate("/");
  }
  
- // This following section will display the form that takes the input from the user.
+ // display the form that takes the input from the user.
  return (
    <div style={{direction:"rtl", textAlign: "right"}}>
      <h3 style={{margin:"30px"}}>הכנס השאלה חדשה</h3>

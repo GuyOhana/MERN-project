@@ -11,6 +11,7 @@ const Record = (props) => (
    {console.log(props.record.numItem)}
    <td>{props.record.numItem}</td>
    <td>{props.record.level}</td>
+   <td>{props.record.personalNum}</td>
    <td>
      <Link style= {{color: "purple", textDecoration:"underline"}} to={`/edit/${props.record._id}`}>לשנות</Link> |
      <button style= {{color: "purple", background: "none", border:"none",textDecoration:"underline"}}
@@ -21,8 +22,6 @@ const Record = (props) => (
        מחיקה
      </button>
    </td>
-   <td>{props.record.personalNum}</td>
-   
  </tr>
 );
  
@@ -30,7 +29,7 @@ export default function RecordList() {
  const [records, setRecords] = useState([]);
  const [searchRecords, setSearchRecords] = useState([]);
 
- // This method fetches the records from the database.
+ //  fetch the records from the database.
  useEffect(() => {
    async function getRecords() {
      const response = await fetch(`http://localhost:5000/record/`);
@@ -50,7 +49,7 @@ export default function RecordList() {
    return;
  }, [records.length]);
  
- // This method will delete a record
+ // delete a record
  async function deleteRecord(id) {
    await fetch(`http://localhost:5000/${id}`, {
      method: "DELETE"
@@ -60,7 +59,7 @@ export default function RecordList() {
    setRecords(newRecords);
  }
  
- // This method will map out the records on the table
+ // map out the searched records on the table
  function recordList() {
   if(!searchRecords.length) return <h2>אין התאמות</h2>
    return searchRecords.map((record) => {
@@ -74,7 +73,7 @@ export default function RecordList() {
    });
  }
  
- // This following section will display the table with the records of individuals.
+ // display the table with the records of individuals.
  return (
    <div style={{ direction: "rtl" }}>
    <SearchBar
@@ -90,8 +89,8 @@ export default function RecordList() {
            <th>שם פריט</th>
            <th>כמות</th>
            <th>דרגה</th>
-           <th style={{textAlign:"right"}}>פעולה</th>
            <th>מספר אישי</th>
+           <th style={{textAlign:"right"}}>פעולה</th>
          </tr>
        </thead>
        <tbody>{recordList()}</tbody>
